@@ -1,20 +1,23 @@
-# The AWS region to deploy resources into
-variable "aws_region" {
-  description = "AWS region to deploy resources"
-  type        = string
-  default     = "us-east-1"
+# The URL of the ECR repository — needed to push Docker images
+output "ecr_repository_url" {
+  description = "The URL of the ECR repository"
+  value       = aws_ecr_repository.app.repository_url
 }
 
-# Name prefix for all resources
-variable "project_name" {
-  description = "Name prefix for all resources"
-  type        = string
-  default     = "stephen-cicd-project"
+# The name of the ECS cluster
+output "ecs_cluster_name" {
+  description = "The name of the ECS cluster"
+  value       = aws_ecs_cluster.main.name
 }
 
-# The name of the ECR repository that stores Docker images
-variable "ecr_repository_name" {
-  description = "Name of the ECR repository"
-  type        = string
-  default     = "stephen-app"
+# The ARN of the ECS task definition
+output "ecs_task_definition_arn" {
+  description = "The ARN of the ECS task definition"
+  value       = aws_ecs_task_definition.app.arn
+}
+
+# The ARN of the IAM execution role
+output "ecs_execution_role_arn" {
+  description = "The ARN of the ECS execution role"
+  value       = aws_iam_role.ecs_execution_role.arn
 }
