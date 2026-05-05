@@ -44,16 +44,16 @@ ALB routes traffic to updated container
 cicd-github-actions-ecs/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml        # GitHub Actions pipeline
+│       └── deploy.yml
 ├── app/
-│   ├── app.py                # Simple Python web application
-│   └── requirements.txt      # Python dependencies
+│   ├── app.py
+│   └── requirements.txt
 ├── terraform/
-│   ├── main.tf               # Root Terraform config
-│   ├── variables.tf          # Input variables
-│   ├── outputs.tf            # Output values
-│   └── terraform.tfvars      # Variable values
-├── Dockerfile                # Container definition
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── terraform.tfvars
+├── Dockerfile
 └── README.md
 ```
 
