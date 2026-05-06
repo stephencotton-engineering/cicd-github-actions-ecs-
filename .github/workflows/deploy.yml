@@ -1,10 +1,8 @@
 name: Build and Deploy to ECS
 
-# Trigger this pipeline on every push to main
+# Set to manual trigger for portfolio — would be push in production
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
